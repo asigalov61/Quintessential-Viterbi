@@ -431,7 +431,7 @@ class BasicChordRenderer(ChordRenderer):
       note.start_time = start_time
       note.end_time = end_time
       note.pitch = pitch
-      note.velocity = 127 - pitch # self._velocity
+      note.velocity = pitch # self._velocity
       note.instrument = self._instrument
       note.program = self._program
 
