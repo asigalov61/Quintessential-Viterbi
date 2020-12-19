@@ -29,7 +29,7 @@ import pretty_midi
 # Allow pretty_midi to read MIDI files with absurdly high tick rates.
 # Useful for reading the MAPS dataset.
 # https://github.com/craffel/pretty-midi/issues/112
-pretty_midi.pretty_midi.MAX_TICK = 1e10
+pretty_midi.MAX_TICK = 1e10
 
 # The offset used to change the mode of a key from major to minor when
 # generating a PrettyMIDI KeySignature.
