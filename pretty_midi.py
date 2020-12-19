@@ -1332,6 +1332,9 @@ class PrettyMIDI(object):
         mid = mido.MidiFile(ticks_per_beat=self.resolution)
         # Create track 0 with timing information
         timing_track = mido.MidiTrack()
+        # MIDI File Name / Track 0 Name
+        timing_track.append(mido.MetaMessage(
+                    'track_name', time=0, name='Quintessential Viterbi Composition'))
         # Add a default time signature only if there is not one at time 0.
         add_ts = True
         if self.time_signature_changes:
@@ -1384,10 +1387,6 @@ class PrettyMIDI(object):
         channels.remove(9)
         for n, instrument in enumerate(self.instruments):
             # Initialize track for this instrument
-            track = mido.MidiTrack()
-            track.append(mido.MetaMessage(
-                    'track_name', time=0, name='Quintessential Viterbi Composition'))
-            mid.tracks.append(track)
             track = mido.MidiTrack()
             # Add track name event if instrument has a name
             if instrument.name:
