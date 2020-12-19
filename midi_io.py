@@ -267,7 +267,7 @@ def note_sequence_to_pretty_midi(
     key_number = seq_key.key
     if seq_key.mode == seq_key.MINOR:
       key_number += _PRETTY_MIDI_MAJOR_TO_MINOR_OFFSET
-    key_signature = pretty_midi.containers.KeySignature(
+    key_signature = KeySignature(
         key_number, seq_key.time)
     pm.key_signature_changes.append(key_signature)
 
