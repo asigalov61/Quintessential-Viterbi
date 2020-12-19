@@ -24,6 +24,8 @@ import sys
 import constants
 import music_pb2
 import pretty_midi
+from containers import (KeySignature, TimeSignature, Lyric, Note,
+                         PitchBend, ControlChange, Text)
 
 
 # Allow pretty_midi to read MIDI files with absurdly high tick rates.
@@ -254,7 +256,7 @@ def note_sequence_to_pretty_midi(
   for seq_ts in sequence.time_signatures:
     if max_event_time and seq_ts.time > max_event_time:
       continue
-    time_signature = pretty_midi.containers.TimeSignature(
+    time_signature = TimeSignature(
         seq_ts.numerator, seq_ts.denominator, seq_ts.time)
     pm.time_signature_changes.append(time_signature)
 
