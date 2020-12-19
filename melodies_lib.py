@@ -403,7 +403,7 @@ class Melody(events_lib.SimpleEventSequence):
         current_sequence_note.start_time = (
             step * seconds_per_step + sequence_start_time)
         current_sequence_note.pitch = note
-        current_sequence_note.velocity = note #velocity
+        current_sequence_note.velocity = note + velocity
         current_sequence_note.instrument = instrument
         current_sequence_note.program = program
 
